@@ -5,7 +5,11 @@ operation = input("Choose the operation (+, -, *, /): ")
 match operation:
     case '+' : 
         print("The result is ", num1 + num2," .")
-    case '-' : print("The result is ", num2 + num1," .")
-    case '*' : print("The result is ", num1 * num2," .")
-    case '/' : print("The result is ", num1 / num2," .")
-    case _: print("invalid choice")
+    case '-' : 
+        print("The result is ", num2 + num1," .")
+    case '*' : 
+        print("The result is ", num1 * num2," .")
+    case '/' : 
+        print("The result is ", num1 / num2," .")
+    case _: 
+        print("invalid choice")
