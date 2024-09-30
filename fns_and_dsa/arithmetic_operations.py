@@ -6,5 +6,7 @@ def perform_operation(num1, num2, operation):
     elif operation == "multiply":
         return num1*num2
     elif operation == "divide":
-        if num1 != 0 and num2 != 0:
+        if num2 == 0:
+            print("operation imposible")
+        else :
             return num1/num2
