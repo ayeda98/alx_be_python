@@ -3,7 +3,7 @@ CELSIUS_TO_FAHRENHEIT_FACTOR = 9/5
 def convert_to_celsius(fahrenheit):
     return float(fahrenheit-32)/CELSIUS_TO_FAHRENHEIT_FACTOR
 def convert_to_fahrenheit(celsius):
-    return float(celsius*CELSIUS_TO_FAHRENHEIT_FACTOR)+32
+    return loat(fahrenheit-32)/FAHRENHEIT_TO_CELSIUS_FACTOR
 try :
     temperature = float(input("Enter the temperature to convert: "))
     operation = str(input("Is this temperature in Celsius or Fahrenheit? (C/F): "))
