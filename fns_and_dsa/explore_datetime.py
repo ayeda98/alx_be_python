@@ -2,7 +2,7 @@ from datetime import datetime
 from datetime import timedelta
 def display_current_datetime():
     current_date = datetime.now()
-    print(f'{current_date:%d/%m/%Y %H:%M}')
+    print(f'{current_date:%d/%m/%Y %H:%M:%S}')
 display_current_datetime()
 days = int(input("please enter days number"))
 def calculate_future_date(days):
