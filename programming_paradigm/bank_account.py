@@ -1,12 +1,12 @@
 class BankAccount:
-    def __init__(self, float(balance=0.00)):
-        self.balance = balance
+    def __init__(self, balance=0.00):
+        self.balance = float(balance)
     def deposit(self, amount):
-         self.balance =+ amount
+         self.balance =+ float(amount)
          return True
     def withdraw(self, amount):
-        if (self.balance>=amount):
-             self.balance -= amount
+        if (self.balance>=float(amount)):
+             self.balance -= float(amount)
              return True
         else : 
              return False
