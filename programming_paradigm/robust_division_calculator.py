@@ -3,12 +3,12 @@ def safe_divide(numerator, denominator):
         numerator = float(numerator)
         denominator = float(denominator)
     except ValueError:
-        return "Erreur: Veuillez entrer des valeurs numériques."
+        return "Error: Please enter numeric values only"
 
     try:
         # Tente de diviser les deux nombres
         result = numerator / denominator
     except ZeroDivisionError:
-        return "Erreur: Division par zéro."
+        return "Error: Cannot divide by zero."
 
-    return f"Résultat de la division: {result}"
+    return f"The result of the division is {result}"
