@@ -13,7 +13,7 @@ class test(unittest.TestCase):
         self.assertEqual(self.calc.add(-4, 1), -3)
         self.assertEqual(self.calc.add(9, 3), 12)
         # Add more assertions to thoroughly test the add method.
-def test_substract(self):
+def test_substraction(self):
         """Test the substract method."""
         self.assertEqual(self.calc.subtract(4, 3), 1)
         self.assertEqual(self.calc.subtract(3, 8), -5)
