@@ -25,7 +25,7 @@ def test_multiply(self):
         self.assertEqual(self.calc.multiply(-1, -1), 1)
         self.assertEqual(self.calc.multiply(5, -3), -15)
 def test_divide(self):
-        """Test the substract method."""
+        """Test the substract method.""" 
         self.assertEqual(self.calc.divide(8, 2), 4)
         self.assertEqual(self.calc.divide(5, 1), 5)
         self.assertEqual(self.calc.divide(5, 2), 2,5)
