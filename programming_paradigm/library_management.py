@@ -1,35 +1,58 @@
 class Book:
-    def __init__(self, title, author, is_checked_out):
-        self.title = title 
-        self.author = author 
-        self.__is_checked_out = is_checked_out
+    def __init__(self, title, author):
+        self.title = title                 # Public attribute
+        self.author = author               # Public attribute
+        self._is_checked_out = False       # Private attribute
 
-    def get_title(self):
-        return self.title
+    def check_out(self):
+        """Mark the book as checked out."""
+        self._is_checked_out = True
+
+    def return_book(self):
+        """Mark the book as available."""
+        self._is_checked_out = False
 
     def is_checked_out(self):
-        return self.__is_checked_out
+        """Check if the book is checked out."""
+        return self._is_checked_out
+
+    def __str__(self):
+        """Return a string representation of the book."""
+        return f"{self.title} by {self.author}"
 
 
 class Library:
-    def __init__(self, list_books):
-        self.__list_books = list(list_books)
-    
-    def check_out_book(self, book):
-        if book in self.__list_books:
-            self.__list_books.remove(book)
-            print(f"{book.get_title()} has been checked out.")
-        else:
-            print(f"{book.get_title()} is not available in the library.")
-    
+    def __init__(self):
+        self._books = []  # Private list to store Book instances
+
     def add_book(self, book):
-        self.__list_books.append(book)
-        print(f"{book.get_title()} has been added to the library.")
+        """Add a book to the library."""
+        self._books.append(book)
+
+    def check_out_book(self, title):
+        """Check out a book by its title."""
+        for book in self._books:
+            if book.title == title and not book.is_checked_out():
+                book.check_out()
+                print(f"{title} has been checked out.")
+                return
+        print(f"{title} is not available for checkout.")
+
+    def return_book(self, title):
+        """Return a book by its title."""
+        for book in self._books:
+            if book.title == title and book.is_checked_out():
+                book.return_book()
+                print(f"{title} has been returned.")
+                return
+        print(f"{title} was not checked out.")
 
     def list_available_books(self):
-        if not self.__list_books:
-            print("No books available in the library.")
+        """Display all available books in the library."""
+        available_books = [str(book) for book in self._books if not book.is_checked_out()]
+        if not available_books:
+            print("No books are currently available.")
         else:
-            print("Available books in the library:")
-            for book in self.__list_books:
-                print(book.get_title())
+            print("Available books:")
+            for book in available_books:
+                print(book)
