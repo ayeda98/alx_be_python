@@ -19,7 +19,7 @@ class EBook(Book):
         self.file_size = file_size
 
     def __str__(self):
-        return f" EBook: {self.title} by {self.author}, published in {self.year}, size: {self.file_size}KB"
+        return f" EBook: {self.title} by {self.author}, size: {self.file_size}KB"
 
 
 # Sous-classe pour les livres imprimés
@@ -29,7 +29,7 @@ class PrintBook(Book):
         self.page_count = page_count
 
     def __str__(self):
-        return f"PrintBook: {self.title} by {self.author}, published in {self.year}, {self.page_count} pages"
+        return f"PrintBook: {self.title} by {self.author}, {self.page_count} pages"
 
 
 # Classe Bibliothèque
