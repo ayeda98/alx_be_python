@@ -19,7 +19,7 @@ class EBook(Book):
         self.file_size = file_size
 
     def __str__(self):
-        return f" EBook: {self.title} by {self.author}, size: {self.file_size}KB"
+        return f"EBook: {self.title} by {self.author}, size: {self.file_size}KB"
 
 
 # Sous-classe pour les livres imprimés
