@@ -9,7 +9,7 @@ class Book:
         return f"Book('{self.title}', '{self.author}', {self.year})"
     
     def __str__(self):
-        return f"{self.title} by {self.author}, published in {self.year}"
+        return f"Book: {self.title} by {self.author}"
 
 
 # Sous-classe pour les eBooks
@@ -19,7 +19,7 @@ class EBook(Book):
         self.file_size = file_size
 
     def __str__(self):
-        return f"{self.title} by {self.author}, published in {self.year}, size: {self.file_size}KB"
+        return f" EBook: {self.title} by {self.author}, published in {self.year}, size: {self.file_size}KB"
 
 
 # Sous-classe pour les livres imprimés
@@ -29,7 +29,7 @@ class PrintBook(Book):
         self.page_count = page_count
 
     def __str__(self):
-        return f"{self.title} by {self.author}, published in {self.year}, {self.page_count} pages"
+        return f"PrintBook: {self.title} by {self.author}, published in {self.year}, {self.page_count} pages"
 
 
 # Classe Bibliothèque
@@ -45,3 +45,14 @@ class Library:
         for book in self.books:
             print(str(book))
 
+
+# Exemple d'utilisation
+library = Library()
+
+# Ajout des livres
+library.add_book(Book("Pride and Prejudice", "Jane Austen"))
+library.add_book(EBook("Snow Crash", "Neal Stephenson", 500))
+library.add_book(PrintBook("The Catcher in the Rye", "J.D. Salinger", 234))
+
+# Affichage de la liste des livres
+library.list_books()
