@@ -14,12 +14,12 @@ class Book:
 
 # Sous-classe pour les eBooks
 class EBook(Book):
-    def __init__(self, title, author, size, year=None):
+    def __init__(self, title, author, file_size, year=None):
         super().__init__(title, author, year)  
         self.size = size
 
     def __str__(self):
-        return f"{self.title} by {self.author}, published in {self.year}, size: {self.size}MB"
+        return f"{self.title} by {self.author}, published in {self.year}, size: {self.file_size}MB"
 
 
 # Sous-classe pour les livres imprimés
