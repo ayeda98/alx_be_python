@@ -16,7 +16,7 @@ class Book:
 class EBook(Book):
     def __init__(self, title, author, file_size, year=None):
         super().__init__(title, author, year)  
-        self.size = size
+        self.file_size = file_size
 
     def __str__(self):
         return f"{self.title} by {self.author}, published in {self.year}, size: {self.file_size}MB"
